@@ -1,0 +1,23 @@
+{
+  "name": "tivix-task",
+  "version": "1.0.0",
+  "private": true,
+  "description": "For demonstrational purposes",
+  "scripts": {
+    "cypress:run:headless": "cypress run --headless"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kszejdewik/tivix-task.git"
+  },
+  "keywords": [],
+  "author": "kszejdewik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kszejdewik/tivix-task/issues"
+  },
+  "homepage": "https://github.com/kszejdewik/tivix-task#readme",
+  "dependencies": {
+    "cypress": "^12.8.0"
+  }
+}
