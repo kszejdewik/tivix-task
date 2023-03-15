@@ -17,7 +17,7 @@
     "url": "https://github.com/kszejdewik/tivix-task/issues"
   },
   "homepage": "https://github.com/kszejdewik/tivix-task#readme",
-  "dependencies": {
+  "devDependencies": {
     "cypress": "^12.8.0"
   }
 }
