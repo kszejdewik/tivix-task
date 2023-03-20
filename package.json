@@ -18,6 +18,12 @@
   },
   "homepage": "https://github.com/kszejdewik/tivix-task#readme",
   "devDependencies": {
-    "cypress": "^12.8.0"
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.4",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^12.8.0",
+    "ts-loader": "^9.4.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/support/steps-definitions/**/*.js"
   }
 }
