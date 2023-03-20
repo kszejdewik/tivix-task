@@ -1,0 +1,95 @@
+[
+    {
+        "id": "TWX-00",
+        "name": "Template",
+        "description": "A template for adding bugs",
+        "expected": "foo",
+        "actual": "bar",
+        "severity": "Low",
+        "screenshot": "bugs/twx-00.png"
+    },
+    {
+        "id": "TWX-01",
+        "name": "Typo in \"Germany\" country name",
+        "description": "Drop down list with the country names contains typo in \"Germany\" country name",
+        "expected": "Germany",
+        "actual": "Germainy",
+        "severity": "Low"
+    },
+    {
+        "id": "TWX-02",
+        "name": "City list is not filtered by country",
+        "description": "'City' dropdown contains all available cities no matter the country. This creates unnecessary confusion and makes it easier for the user to make a mistake.",
+        "expected": "City list contains only places that match the country",
+        "actual": "City list contains all cities available in the system",
+        "severity": "Minor",
+        "screenshot": "bugs/twx-02.png"
+    },
+    {
+        "id": "TWX-03",
+        "name": "The list of car models is unavailable",
+        "description": "When reserving a car the user needs to manually input the car name. This approach makes the car models hard to find, user is not aware what brands and models are available until it guesses it and can easily miss the available mode which leads to the client loss.",
+        "expected": "foo",
+        "actual": "bar",
+        "severity": "Critical"
+    },
+    {
+        "id": "TWX-04",
+        "name": "Select all and backspace removes only day from the date picker",
+        "description": "The date picker allows the user to enter the date manually, without opening the calendar. However when it tries to correct the date by using select all and backspace it removes only 'day' option even though 'select all' contains the whole date",
+        "expected": "select all + backspace returns the date picker to the defauld state without any date (same as 'clear')",
+        "actual": "select all + backspace removes only the day",
+        "severity": "Low"
+    },
+    {
+        "id": "TWX-06",
+        "name": "User can enter any date, even impossible one",
+        "description": "The system allows the user to enter any possible data by picking any date, then clicking on search, and then going to /details/1 (or any other number) page. Even though the system blocks improper date on the first page it passes it to /details subpage and lets the user create a valid reservation. For instance - it's possible to pick-up a car in year 2025 and return in 2024. This can cause severe data inconsistency in the system.",
+        "expected": "/details/ page with 'Rent!'",
+        "actual": "bar",
+        "severity": "Major",
+        "screenshot": "bugs/twx-06.png"
+    },
+    {
+        "id": "TWX-07",
+        "name": "'Email' field validation passes invalid email addresses",
+        "description": "The 'email' field validates the user entry by checking if it contains '@' sign which is completely insufficient since it allows to enter just '@' with no letters, two '@' in one email or enter an email without the domain. Considering email address is the only mean to contact the client this can cause severe system damage.",
+        "expected": "'Email' field is validated by the reqular expression and sends the confirmation on users address",
+        "actual": "Validation only checks the presence of '@' and don't confirm the address",
+        "severity": "Major",
+        "screenshot": "bugs/twx-07.png"
+    },
+    {
+        "id": "TWX-08",
+        "name": "Misleading 'Search' button on the top of the page",
+        "description": "On the top of all pages there is a 'Search' button-like field. However this is not a button but the link to the '/' page. This element can be clicked by the user which causes the loss of all enetered data. Misleading behavior that additionally removes the whole user's effort can damage the business.",
+        "expected": "Clickable company logo on the top of the page",
+        "actual": "'Search' button that resets the page",
+        "severity": "Major"
+    },
+    {
+        "id": "TWX-09",
+        "name": "'Card number' field does not validate actual card number",
+        "description": "Card number validator is extremely poorly implemented, with no actual validation of the card number and let the user enter any number with length lower than 25.Considering there is a strict format of the card number with Luhn algorighm that confirms its consistency and entering invalid payment method can lead to money loss and damage the company this issue should be resolved with highest priority.",
+        "expected": "Validator sends the data into mod-10 algorithm",
+        "actual": "Validator just checks if the card number consists only digits, not a proper validation",
+        "severity": "Critical"
+    },
+    {
+        "id": "TWX-10",
+        "name": "Validation on 'rent' page removes all data if just one is improper",
+        "description": "When the user enters - for instance - improper email address, but the rest is correct, and clicks on 'Rent' button the message about improper email is properly displayed. However this also wipes out all other fields even when they're properly filled and pass the validation.",
+        "expected": "Validator wipes out all data enetered by the user if just one doesn't pass the check",
+        "actual": "Validator point out on the improper field and removes only improper data",
+        "severity": "Minor"
+    },
+    {
+        "id": "TWX-11",
+        "name": "Homepage always opens with an error",
+        "description": "When enetering the homepage first thing that user can spot is big red bar with 'Please fill pickup and drop off dates' message. This makes the impression of the page immidiate error and crash without taking any action by the user.",
+        "expected": "User enters the page without any errors, red warning message should be displayed only if the user inputs improper data",
+        "actual": "Red warning message is displayed every time user open the homepage",
+        "severity": "Low"
+    }
+
+]
