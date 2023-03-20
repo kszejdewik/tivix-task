@@ -14,7 +14,7 @@
   "author": "kszejdewik",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kszejdewik/tivix-task/issues"
+    "url": "https://github.com/kszejdewik/tivix-task/known-issues.json"
   },
   "homepage": "https://github.com/kszejdewik/tivix-task#readme",
   "devDependencies": {
@@ -27,3 +27,4 @@
     "stepDefinitions": "cypress/support/steps-definitions/**/*.js"
   }
 }
+
