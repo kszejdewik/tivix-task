@@ -16,3 +16,4 @@ Feature: Front page - choose the car
       | country  | city   | car_name  | start_date | return_date | outcome |
       | Poland   | AAA    | Volskagen | 03/21/2023 | 03/31/2023  | ABC     |
       | Germainy | Berlin | Volskagen | 04/21/2023 | 04/31/2023  | ABC     |
+      | France   | Paris  | Volskagen | 04/21/2023 | 04/31/2023  | ABC     |
