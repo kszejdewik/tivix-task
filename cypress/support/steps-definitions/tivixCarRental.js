@@ -1,38 +1,38 @@
 /// <reference types="cypress" />
 
 import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
-import mainPage from "../page-objects/mainPage_PO";
+import mainPage_PO from "../page-objects/mainPage_PO";
 
-const mainPage = new mainPage()
+const mainPage = new mainPage_PO;
 
 Given("I visit the car rent homepage", () => {
     mainPage.navigate('/')
 })
 
-When("I pick out the country: {word}", (country) => {
+When("I pick out the country: {string}", (country) => {
     mainPage.selectCountry(country)
 })
 
-When("I pick out the city: {word}", (city) => {
+When("I pick out the city: {string}", (city) => {
     mainPage.selectCity(city)
 })
 
-When("I enter the name: {string}", (carName) => {
-    cy.log(carName)
+When("I enter the name: {string}", function(carName) {
+    mainPage.typeCarName(carName)
 })
 
 When("I enter start date: {string}", (pickUpDate) => {
-    cy.log(pickUpDate)
+    mainPage.selectPickUpDate(pickUpDate)
 })
 
 When("I enter return date: {string}", (dropOffDate) => {
-    cy.log(dropOffDate)
+    mainPage.selectDropOffDate(dropOffDate)
 })
 
 When("I click on the Search button", () => {
-    cy.log("Button clicked")
+    mainPage.clickOnSubmitButton()
 })
 
-Then("I can see the appropriate {string}", (outcome) => {
-    cy.log(outcome)
+Then("I can see the appropriate {string} on {string}", (outcome, selector) => {
+    mainPage.checkIfResultContainsText(selector, outcome)
 })
