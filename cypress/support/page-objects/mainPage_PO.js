@@ -8,7 +8,9 @@ class mainPage_PO {
         carModel: () => cy.get('#model'),
         pickUpDateSelector: () => cy.get('#pickup'),
         dropOffDateSelector: () => cy.get('#dropoff'),
-        submitButton: () => cy.get('.btn')
+        submitButton: () => cy.contains('.btn', 'Search'),
+        resultTable: () => cy.get('table#search-results'),
+        rentButton: () => cy.contains('.btn', 'Rent')
     }
 
     navigate(path) {
@@ -20,7 +22,7 @@ class mainPage_PO {
     }
 
     selectCity(city) {
-        this.elements.citySelector().select(city)
+        this.elements.citySelector().select(city, { force: true })
     }
 
     typeCarName(carName) {
@@ -53,6 +55,13 @@ class mainPage_PO {
         cy.contains(selector, outcome).should('be.visible')
     }
 
+    checkIfResultTableExists() {
+        this.elements.resultTable().should('be.visible')
+    }
+
+    clickOnRentButton() {
+        this.elements.rentButton().click( { force: true })
+    }
 }
 
 export default mainPage_PO;

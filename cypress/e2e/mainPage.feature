@@ -22,3 +22,20 @@ Feature: Front page - choose the car
       | Poland   | Cracow  | Volkswagen | nothing    | nothing     | Please fill pickup and drop off dates | .alert   |
       | Germainy | Berlin  | Mazda      | 2023-04-01 | 2023-03-31  | Please enter a valid date             | .alert   |
       | Germainy | Paris   | Mazda      | 2023-04-01 | 2023-05-01  | Country doesn\'t match city           | h3       |
+
+  Scenario: I rent an example car
+    When I pick out the country: 'Germainy'
+    And I pick out the city: 'Berlin'
+    And I enter the name: 'Toyota RAV4'
+    And I enter start date: '2023-04-23'
+    And I enter return date: '2023-04-29'
+    And I click on the Search button
+    Then The result table is presented
+    And I click on the Rent button
+    Then The details page is presented
+    And I click on the Rent button
+    Then The rent page is presented
+    And I fill the input with the data: 'John', 'Foobar', '1234', 'john@foobar.com'
+    And I click on the Rent button
+    Then The Successfull message is presented
+
